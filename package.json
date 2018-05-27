@@ -6,10 +6,15 @@
   "bugs": {
     "url": "https://github.com/szmslab/material-ui-flat-pagination/issues"
   },
+  "engines": {
+    "node": ">= 6.11.1 < 10",
+    "yarn": ">= 1.0.0"
+  },
   "dependencies": {
     "prop-types": "^15.6.1"
   },
   "devDependencies": {
+    "@material-ui/core": "^1.1.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.4",
@@ -23,7 +28,6 @@
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.8.2",
     "jest": "^22.4.4",
-    "material-ui": "^0.20.1",
     "raf": "^3.4.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -31,7 +35,6 @@
     "rimraf": "^2.6.2"
   },
   "peerDependencies": {
-    "material-ui": ">=0.18.0 <1.0.0",
     "react": "^15.5.0 || ^16.0.0",
     "react-dom": "^15.5.0 || ^16.0.0"
   },

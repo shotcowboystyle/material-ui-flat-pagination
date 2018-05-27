@@ -2,8 +2,8 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import FlatButton from 'material-ui/FlatButton';
-import {computePagination, getOffset} from './core';
+import Button from '@material-ui/core/Button';
+import { computePagination, getOffset } from './core';
 
 const styles = {
   buttonStyle: {
@@ -46,18 +46,18 @@ class FlatPagination extends React.PureComponent {
     limit: validateNumber(1),
     total: validateNumber(0),
     className: PropTypes.string,
-    currentPageHoverColor: FlatButton.propTypes.hoverColor,
-    currentPageLabelStyle: FlatButton.propTypes.labelStyle,
-    currentPageStyle: FlatButton.propTypes.style,
-    disabled: FlatButton.propTypes.disabled,
-    disableTouchRipple: FlatButton.propTypes.disableTouchRipple,
-    hoverColor: FlatButton.propTypes.hoverColor,
+    currentPageHoverColor: Button.propTypes.hoverColor,
+    currentPageLabelStyle: Button.propTypes.labelStyle,
+    currentPageStyle: Button.propTypes.style,
+    disabled: Button.propTypes.disabled,
+    disableTouchRipple: Button.propTypes.disableTouchRipple,
+    hoverColor: Button.propTypes.hoverColor,
     nextPageLabel: PropTypes.node,
-    onClick: FlatButton.propTypes.onClick,
-    otherPageLabelStyle: FlatButton.propTypes.labelStyle,
-    otherPageStyle: FlatButton.propTypes.style,
+    onClick: Button.propTypes.onClick,
+    otherPageLabelStyle: Button.propTypes.labelStyle,
+    otherPageStyle: Button.propTypes.style,
     previousPageLabel: PropTypes.node,
-    rippleColor: FlatButton.propTypes.rippleColor,
+    rippleColor: Button.propTypes.rippleColor,
     reduced: PropTypes.bool,
     style: PropTypes.object
   };
@@ -76,7 +76,7 @@ class FlatPagination extends React.PureComponent {
 
   renderCurrentButton(targetPage) {
     return (
-      <FlatButton
+      <Button
         disabled={this.props.disabled || this.props.total <= 0}
         disableTouchRipple={true}
         hoverColor={this.props.currentPageHoverColor || this.props.hoverColor}
@@ -92,7 +92,7 @@ class FlatPagination extends React.PureComponent {
   renderOtherButton(targetPage) {
     const label = '' + targetPage;
     return (
-      <FlatButton
+      <Button
         disabled={this.props.disabled || this.props.total <= 0}
         disableTouchRipple={this.props.disableTouchRipple}
         hoverColor={this.props.hoverColor}
@@ -109,7 +109,7 @@ class FlatPagination extends React.PureComponent {
 
   renderEllipsisButton(key) {
     return (
-      <FlatButton
+      <Button
         disabled={true}
         key={key}
         label="..."
@@ -122,7 +122,7 @@ class FlatPagination extends React.PureComponent {
 
   renderEndButton(targetPage, label, key) {
     return (
-      <FlatButton
+      <Button
         {...(React.isValidElement(label)
           ? {icon: React.cloneElement(label, {style: {...styles.labelStyle, ...label.props.style}})}
           : {label: label, labelStyle: {...styles.labelStyle, ...this.props.otherPageLabelStyle}})}
